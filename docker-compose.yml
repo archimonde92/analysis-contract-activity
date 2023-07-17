@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  relay_service:
+    container_name: analysis-contract
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
